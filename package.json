@@ -1,0 +1,23 @@
+{
+  "name": "repo",
+  "version": "0.1.0",
+  "description": "catch you github nonforked repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "bin": {
+      "repo": "./index.js"
+   },
+  "keywords": [
+    "github",
+    "repository"
+  ],
+  "author": "detailyang",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "co": "^4.6.0",
+    "optimist": "^0.6.1"
+  }
+}
