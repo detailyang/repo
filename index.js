@@ -1,4 +1,6 @@
 'use strict';
+
+
 const argv = require('optimist').argv;
 const GitHubApi = require("github");
 const co = require("co");
@@ -63,35 +65,34 @@ function sortRepo(repos) {
 }
 
 function main() {
-	if (argv.help) {
-		return help();
-	}
+    if (argv.help) {
+        return help();
+    }
 
-	if (!argv.username || !argv.password) {
-		return help();
-	}
+    if (!argv.username || !argv.password) {
+        return help();
+    }
 
-	const username = argv.username;
-	const password = argv.password;
-	const per_page = argv.per_page;
-	let repos = [];
+    const username = argv.username;
+    const password = argv.password;
+    const per_page = argv.per_page;
+    let repos = [];
 
-	github.authenticate({
-		type: "basic",
-		username: username,
-		password: password,
-	});
+    github.authenticate({
+        type: "basic",
+        username: username,
+        password: password,
+    });
 
-	co(function *() {
-		for (let i = 1; i < 100; i++) {
-			const repo = yield getNonForkRepo(i, per_page);
-			repos = repos.concat(repo);
-		}
-
-		console.log(JSON.stringify(sortRepo(repos)));
-	}).catch((err) => {
-		console.log(JSON.stringify(sortRepo(repos)));
-	})
+    co(function *() {
+        for (let i = 1; i < 100; i++) {
+            const repo = yield getNonForkRepo(i, per_page);
+            repos = repos.concat(repo);
+        }
+        console.log(JSON.stringify(sortRepo(repos)));
+    }).catch((err) => {
+        console.log(JSON.stringify(sortRepo(repos)));
+    })
 }
 
 main()
