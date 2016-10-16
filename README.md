@@ -3,7 +3,7 @@ catch you github nonforked repository
 
 ##Install
 
-npm install repo
+npm install github-repo-tool
 
 ##Usage
 
