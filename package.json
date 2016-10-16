@@ -1,5 +1,5 @@
 {
-  "name": "repo",
+  "name": "github-repo-tool",
   "version": "0.1.0",
   "description": "catch you github nonforked repository",
   "main": "index.js",
