@@ -63,7 +63,7 @@ function getNonForkRepo(page, _per_page) {
 
 function sortRepo(repos) {
     return repos.sort((a, b) => {
-        return a.forks - b.forks;
+        return b.forks - a.forks;
     });
 }
 
