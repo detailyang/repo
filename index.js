@@ -49,7 +49,7 @@ function getNonForkRepo(page, _per_page) {
                 return true;
             }).map((repo) => {
                 return {
-                    url: repo.url,
+                    url: repo.html_url,
                     forks: repo.forks,
                     name: repo.name,
                     desc: repo.description,
